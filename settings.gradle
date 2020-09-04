@@ -1,0 +1,13 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../ask_send_data_flutter/.android/include_flutter.groovy'
+))
+rootProject.name = "Data_Exchange"
+
+include ':ask_send_data_flutter'
+project(':ask_send_data_flutter').projectDir = new File('../ask_send_data_flutter')
+
+include ':ask_send_data_flutter'
+project(':ask_send_data_flutter').projectDir = new File('../ask_send_data_flutter')
